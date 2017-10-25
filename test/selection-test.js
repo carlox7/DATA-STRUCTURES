@@ -4,8 +4,6 @@ const chai = require('chai'),
 chai.use(require('chai-sorted'));
 const selectionSort = require('../selection-sort/selection');
 
-let testArray = [{id:2, name:'bob'},{id:1, name:'apple'}, {id:3, name:'carlo'}];
-
 describe('selectionSort testing', () =>{
   let testArray = (length, max) => [...new Array(length)].map(() =>
     Math.round(Math.random() * max));
