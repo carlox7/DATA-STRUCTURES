@@ -1,6 +1,6 @@
 'use strict';
 
-module.export = function selectionSort(arr){
+module.exports = function selectionSort(arr){
   let minIndex, temp;
   for(let i = 0; i < arr.length; i++){
     minIndex = i;
