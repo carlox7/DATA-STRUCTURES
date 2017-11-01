@@ -1,28 +1,27 @@
 'use strict';
 
 module.exports = function mergeSort(arr){
-  if(arr.length < 2)
-    return arr;
-  var mid = Math.floor(arr.length / 2),
-    left = arr.slice(0,mid),
-    right = arr.slice(mid);
-  //send left and right to the mergeSort to broke it down into pieces
-  //then merge those
-  return merge(mergeSort(left),mergeSort(right));
+  console.log('this is the array', arr);
+  if(arr.length === 1) return arr;
+  const middle = Math.floor(arr.length / 2);
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
+  return merge(mergeSort(left), mergeSort(right));
 };
 
-module.exports = function merge(left, right){
-  var result = [],
-    l = 0,
-    r = 0;
-  while(l < left.length && r < right.length){
-    if(left[l] < right[r]){
-      result.push(left[l++]);
-    }
-    else{
-      result.push(right[r++]);
+function merge(left, right){
+  let result = [];
+  let indexLeft = 0;
+  let indexRight = 0;
+
+  while(indexLeft < left.length && indexRight < right.length){
+    if(left[indexLeft] < right[indexRight]){
+      result.push(left[indexLeft]);
+      indexLeft++;
+    }else{
+      result.push(right[indexRight]);
+      indexRight++;
     }
   }
-  //remaining part needs to be addred to the result
-  return result.concat(left.slice(l)).concat(right.slice(r));
+  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 };

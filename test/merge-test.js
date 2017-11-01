@@ -3,13 +3,11 @@ const chai = require('chai'),
   expect = chai.expect;
 chai.use(require('chai-sorted'));
 const mergeSort = require('../merge-sort/merge');
-const merge = require('../merge-sort/merge');
 
 describe('mergeSort testing', () =>{
   let testArray = (length, max) => [...new Array(length)].map(() =>
     Math.round(Math.random() * max));
-  let testMerge = insertionSort(testArray(10, 100));
-  console.log(testMerge);
+  let testMerge = mergeSort(testArray(10, 100));
 
   describe('merge sort', () => {
     it('should sort array', () => {
