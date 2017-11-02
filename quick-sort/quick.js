@@ -2,12 +2,10 @@
 
 module.exports = function quickSort(arr, left, right){
   let pivot, partitionIndex;
-
   if(left < right){
     pivot = right;
     partitionIndex = partition(arr, pivot, left, right);
 
-    //sort left and right
     quickSort(arr, left, partitionIndex - 1);
     quickSort(arr, partitionIndex + 1, right);
   }
