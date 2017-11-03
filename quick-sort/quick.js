@@ -1,4 +1,4 @@
-'use strict';
+
 
 module.exports = function quickSort(arr, left, right){
   let pivot, partitionIndex;
