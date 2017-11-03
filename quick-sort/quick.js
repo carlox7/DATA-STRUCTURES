@@ -2,6 +2,9 @@
 
 module.exports = function quickSort(arr, left, right){
   let pivot, partitionIndex;
+  if(typeof left === 'undefined') left = 0;
+  if(typeof right === 'undefined') right = arr.length - 1;
+
   if(left < right){
     pivot = right;
     partitionIndex = partition(arr, pivot, left, right);
