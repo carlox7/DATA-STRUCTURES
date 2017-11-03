@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = function mergeSort(arr){
-  console.log('this is the array', arr);
   if(arr.length === 1) return arr;
   const middle = Math.floor(arr.length / 2);
   const left = arr.slice(0, middle);

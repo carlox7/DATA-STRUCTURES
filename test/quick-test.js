@@ -8,7 +8,7 @@ const quickSort = require('../quick-sort/quick');
 describe('quickSort testing', () =>{
   let testArray = (length, max) => [...new Array(length)].map(() =>
     Math.round(Math.random() * max));
-  let testQuick = quickSort(testArray(10, 100), 0, 9);
+  let testQuick = quickSort(testArray(10, 100));
 
   describe('quick sort', () => {
     it('should sort array', () => {
